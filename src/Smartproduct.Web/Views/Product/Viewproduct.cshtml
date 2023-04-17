@@ -1,0 +1,148 @@
+﻿@model Smartproduct.Web.Models.ProductFileViewModel
+
+<meta http-equiv="Content-Security-Policy" content="content-security-policy:default-src 'self'; script-src 'self' ; style-src 'self' 'unsafe-inline' ; img-src * data:; font-src * data:;">
+<main id="content" role="main" class="main">
+    <div class="content container-fluid">
+        <div class="page-header">
+            <div class="row align-items-end">
+                <div class="col-sm mb-2 mb-sm-0">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb breadcrumb-no-gutter">
+                            <li class="breadcrumb-item"><a class="breadcrumb-link" href="javascript:;">Administration</a></li>
+                            <li class="breadcrumb-item"><a class="breadcrumb-link" href="javascript:;">Product</a></li>
+
+                        </ol>
+                    </nav>
+
+                    <h1 class="page-header-title">Viewing Product</h1>
+                </div>
+            </div>
+            <!-- End Row -->
+        </div>
+    </div>
+    <!-- End Breadcrumb Section -->
+    <!-- Content Section -->
+    <div class="content container-fluid my-n9">
+        <!-- Pricing -->
+        <!-- User Profile -->
+        <div class="container content-space-1">
+            <div class="card">
+                <div class="card-header">
+                    <p class="card-header-title">Product</p>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="w-md-75 w-lg-65 mx-md-auto">
+                                <!-- Media -->
+                                <div class="d-sm-flex">
+                                    <div class="flex-shrink-0 mb-3 mb-sm-0">
+                                        <div class="avatar avatar-xxl avatar-circle">
+                                            @if (Model.File != null)
+                                            {
+
+                                                <img class="avatar-img" src="data:image/jpg;base64, @Model.File.FileDataStr" alt="Image Description">
+                                                <img class="bg-white position-absolute bottom-0 end-0 rounded-circle p-1" src="~/front-dashboard-v1.1/dist/assets/svg/illustrations/top-vendor.svg" alt="Icon" width="32" height="32" title="Top Writer">
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Media -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <!-- Form Group -->
+                            <div class="form-group">
+                                <label for="txtName" class="input-label">Name</label>
+                                <div class="js-form-message mb-3">
+                                    <div class="col-sm-12 js-form-message mb-3">
+                                        <input type="text" class="form-control" value="@Model.Product.Name" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Form Group -->
+                        </div>
+
+                        <div class="col-sm-6">
+                            <!-- Form Group -->
+                            <div class="form-group">
+                                <label for="txtCategoryCode" class="input-label">Description</label>
+                                <div class="js-form-message mb-3">
+                                    <div class="col-sm-12 js-form-message mb-3">
+                                        <input type="text" class="form-control" value="@Model.Product.Description" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Form Group -->
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <!-- Form Group -->
+                            <div class="form-group">
+                                <label for="txtCategoryCode" class="input-label">Product Code</label>
+                                <div class="js-form-message mb-3">
+                                    <div class="col-sm-12 js-form-message mb-3">
+                                        <input type="text" class="form-control" value="@Model.Product.ProductCode" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Form Group -->
+                        <!-- Form Group -->
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="input-label">Product Category</label>
+                                <div class="col-sm-12 js-form-message mb-3">
+                                    <input type="text" class="form-control" value="@Model.Product.CategoryName" readonly>
+                                </div>
+                            </div>
+                            <!-- End Form Group -->
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <!-- Form Group -->
+                            <div class="form-group">
+                                <label for="txtCategoryCode" class="input-label">Price</label>
+                                <div class="js-form-message mb-3">
+                                    <div class="col-sm-12 js-form-message mb-3">
+                                        <input type="text" class="form-control" value="@Model.Product.Price" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Form Group -->
+                        <!-- Form Group -->
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="input-label">Author/Date</label>
+                                <div class="col-sm-12 js-form-message mb-3">
+                                    <input type="text" class="form-control" value="@(Model.Product.CreatedBy+" "+Model.Product.CreatedOn)" readonly>
+                                </div>
+                            </div>
+                            <!-- End Form Group -->
+                        </div>
+                    </div>
+
+                    <div class="w-100"></div>
+                    <!-- End Form -->
+                </div>
+                <!-- Footer -->
+                <div class="card-footer d-flex justify-content-end">
+                    <a class="btn btn-primary" href="@Url.Action("Editproduct", "Product", new { ProductId = Model.Product.ProductId})">Edit Product</a>
+                    <a class="btn btn-white" href="@Url.Action("Currentproducts", "Product")">back</a>
+                </div>
+                <!-- End Footer -->
+            </div>
+        </div>
+        <!-- End User Profile -->
+        <!-- End Pricing -->
+    </div>
+</main>
+
+

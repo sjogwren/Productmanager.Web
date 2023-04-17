@@ -1,0 +1,15 @@
+C:\Users\zaino\source\repos\Smartproduct.Web\src\Smartproduct.Apirouter\bin\Debug\netcoreapp3.1\Smartproduct.Apirouter.deps.json
+C:\Users\zaino\source\repos\Smartproduct.Web\src\Smartproduct.Apirouter\bin\Debug\netcoreapp3.1\Smartproduct.Apirouter.dll
+C:\Users\zaino\source\repos\Smartproduct.Web\src\Smartproduct.Apirouter\bin\Debug\netcoreapp3.1\Smartproduct.Apirouter.pdb
+C:\Users\zaino\source\repos\Smartproduct.Web\src\Smartproduct.Apirouter\bin\Debug\netcoreapp3.1\Smartproduct.Interface.dll
+C:\Users\zaino\source\repos\Smartproduct.Web\src\Smartproduct.Apirouter\bin\Debug\netcoreapp3.1\Smartproduct.Model.dll
+C:\Users\zaino\source\repos\Smartproduct.Web\src\Smartproduct.Apirouter\bin\Debug\netcoreapp3.1\Smartproduct.Interface.pdb
+C:\Users\zaino\source\repos\Smartproduct.Web\src\Smartproduct.Apirouter\bin\Debug\netcoreapp3.1\Smartproduct.Model.pdb
+C:\Users\zaino\source\repos\Smartproduct.Web\src\Smartproduct.Apirouter\obj\Debug\netcoreapp3.1\Smartproduct.Apirouter.csproj.AssemblyReference.cache
+C:\Users\zaino\source\repos\Smartproduct.Web\src\Smartproduct.Apirouter\obj\Debug\netcoreapp3.1\Smartproduct.Apirouter.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zaino\source\repos\Smartproduct.Web\src\Smartproduct.Apirouter\obj\Debug\netcoreapp3.1\Smartproduct.Apirouter.AssemblyInfoInputs.cache
+C:\Users\zaino\source\repos\Smartproduct.Web\src\Smartproduct.Apirouter\obj\Debug\netcoreapp3.1\Smartproduct.Apirouter.AssemblyInfo.cs
+C:\Users\zaino\source\repos\Smartproduct.Web\src\Smartproduct.Apirouter\obj\Debug\netcoreapp3.1\Smartproduct.Apirouter.csproj.CoreCompileInputs.cache
+C:\Users\zaino\source\repos\Smartproduct.Web\src\Smartproduct.Apirouter\obj\Debug\netcoreapp3.1\Smartproduct.Apirouter.csproj.CopyComplete
+C:\Users\zaino\source\repos\Smartproduct.Web\src\Smartproduct.Apirouter\obj\Debug\netcoreapp3.1\Smartproduct.Apirouter.dll
+C:\Users\zaino\source\repos\Smartproduct.Web\src\Smartproduct.Apirouter\obj\Debug\netcoreapp3.1\Smartproduct.Apirouter.pdb

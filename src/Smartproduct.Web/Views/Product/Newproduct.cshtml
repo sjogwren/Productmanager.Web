@@ -1,0 +1,131 @@
+﻿@model Smartproduct.Model.Product.Product
+
+@{
+    ViewData["Title"] = "New product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!-- ========== MAIN ========== -->
+<main id="content" role="main" class="main">
+    <div class="content container-fluid">
+        <div class="page-header">
+            <div class="row align-items-end">
+                <div class="col-sm mb-2 mb-sm-0">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb breadcrumb-no-gutter">
+                            <li class="breadcrumb-item"><a class="breadcrumb-link" href="javascript:;">Administration</a></li>
+                            <li class="breadcrumb-item"><a class="breadcrumb-link" href="javascript:;">Product</a></li>
+
+                        </ol>
+                    </nav>
+
+                    <h1 class="page-header-title">New product</h1>
+                </div>
+            </div>
+            <!-- End Row -->
+        </div>
+    </div>
+    <!-- End Breadcrumb Section -->
+    <!-- Content Section -->
+    <div class="content container-fluid my-n9">
+        <form class="js-validate" id="form1" method="post" asp-action="Newproduct" asp-controller="Product" enctype="multipart/form-data">
+            <div class="card">
+                <div class="card-header">
+                    <p class="card-header-title">New product</p>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <!-- Form Group -->
+                            <div class="form-group">
+                                <label for="txtName" class="input-label">Name</label>
+                                <div class="js-form-message mb-3">
+                                    <input id="txtName" type="text" class="form-control" required
+                                           data-msg="Please enter a category name." placeholder="Product name" aria-label="Current Value" asp-for="Name">
+                                    <span style="color:#ed4c78;font-size: 80%;">@Model.Errormessage</span>
+                                </div>
+                            </div>
+                            <!-- End Form Group -->
+                        </div>
+
+                        <div class="col-sm-6">
+                            <!-- Form Group -->
+                            <div class="form-group">
+                                <label for="txtCategoryCode" class="input-label">Description</label>
+                                <div class="js-form-message mb-3">
+                                    <input id="txtDescription" type="text" class="form-control" required
+                                           data-msg="Please enter a description." placeholder="Description" aria-label="Current Value" asp-for="Description">
+                                </div>
+                            </div>
+                            <!-- End Form Group -->
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <!-- Form Group -->
+                            <div class="form-group">
+                                <label for="txtPrice" class="input-label">Price(R)</label>
+                                <div class="js-form-message mb-3">
+                                    <input id="txtPrices" type="text" class="form-control" required
+                                           data-msg="Please enter a price." placeholder="Price" oninput="validate(this);" aria-label="Current Value" asp-for="Price">
+                                </div>
+                            </div>
+                            <!-- End Form Group -->
+                            <!-- Form Group -->
+                            <div class="form-group">
+                                <label for="txtCategoryCode" class="input-label">Category</label>
+                                <div class="col-sm-12 js-form-message mb-3">
+                                    @Html.DropDownListFor(m => m.CategoryName, new SelectList(Model.CategoryList, "Name", "Name"), new { @class = "js-select2-custom form-control", @required = true })
+                                </div>
+                            </div>
+                            <!-- End Form Group -->
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <!-- Form Group -->
+                            <div class="form-group">
+                            </div>
+                            <!-- End Form Group -->
+                            <!-- Form Group -->
+                            <div class="form-group">
+                                <label for="txtCategoryCode" class="input-label">Product Image</label>
+                                <div class="col-sm-4">
+                                    <input type="file" name="file" />
+                                </div>
+                            </div>
+                            <!-- End Form Group -->
+                        </div>
+                    </div>
+                    <div class="w-100"></div>
+                    <!-- End Form -->
+                </div>
+                <!-- Footer -->
+                <div class="card-footer d-flex justify-content-end">
+                    <a class="btn btn-white" href="@Url.Action("Currentproducts", "Product")">Cancel</a>
+                    <input type="submit" value="Save" class="btn btn-primary ml-2" id="btnSave" />
+                </div>
+                <!-- End Footer -->
+            </div>
+        </form>
+    </div>
+    <!-- End Content Section -->
+</main>
+<!-- ========== END MAIN ========== -->
+
+@section scripts{
+    <script>
+        function checkKey() {
+            var clean = this.value.replace(/[^0-9,]/g, "")
+                .replace(/(,.*?),(.*,)?/, "$1");
+            // don't move cursor to end if no change
+            if (clean !== this.value) this.value = clean;
+        }
+        // demo
+        document.getElementById('txtPrices').oninput = checkKey;
+    </script>
+}

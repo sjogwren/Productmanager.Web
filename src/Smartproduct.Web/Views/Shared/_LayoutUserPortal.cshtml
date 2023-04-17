@@ -1,0 +1,111 @@
+﻿
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+<head>
+    <!-- Required Meta Tags Always Come First -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Title -->
+    <title>Product Manager</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="~/favicon.ico">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="~/front-dashboard-v1.1/dist/assets/css/vendor.min.css">
+    <link rel="stylesheet" href="~/front-dashboard-v1.1/dist/assets/vendor/icon-set/style.css">
+
+    <!-- CSS Front Template -->
+    <link rel="stylesheet" href="~/front-dashboard-v1.1/dist/assets/css/theme.min.css?v=1.0">
+</head>
+
+<body class="d-flex align-items-center min-h-100">
+    <!-- ========== END HEADER ========== -->
+    <!-- ========== MAIN CONTENT ========== -->
+    <main id="content" role="main" class="main pt-0">
+        <!-- Content -->
+        <div class="container-fluid px-3">
+            <div class="row">
+                <!-- Cover -->
+                <div class="col-lg-6 d-none d-lg-flex justify-content-center align-items-center min-vh-lg-100 position-relative bg-light px-0">
+                    <!-- Logo & Language -->
+                    <!-- End Logo & Language -->
+
+                    <div style="max-width: 23rem;">
+                        <div class="text-center mb-5">
+                            <img class="img-fluid" src="~/front-dashboard-v1.1/dist/assets/svg/illustrations/chat.svg" alt="Image Description" style="width: 12rem;">
+                        </div>
+
+                        <!-- List Checked -->
+                        <ul class="list-checked list-checked-lg list-checked-primary list-unstyled-py-4">
+                            <li class="list-checked-item">
+                                <span class="d-block font-weight-bold mb-1 text-wrap">Whats is 'Product'</span>
+                                A product is the item offered for sale. A product can be a service or an item. It can be physical or in virtual or cyber form. Every product is made at a cost and each is sold at a price. The price that can be charged depends on the market, the quality, the marketing and the segment that is targeted. Each product has a useful life after which it needs replacement, and a life cycle after which it has to be re-invented. In FMCG parlance, a brand can be revamped, re-launched or extended to make it more relevant to the segment and times, often keeping the product almost the same.
+                            </li>
+
+                            <li style="list-style:none"><center><h2 class="display-4 text-danger">Product Manager</h2></center></li>
+                        </ul>
+                        <!-- End List Checked -->
+                        <!-- End Row -->
+                    </div>
+                </div>
+                <!-- End Cover -->
+
+                @RenderBody()
+            </div>
+            <!-- End Row -->
+        </div>
+        <!-- End Content -->
+    </main>
+    <!-- ========== END MAIN CONTENT ========== -->
+    <!-- JS Implementing Plugins -->
+@*<script src="~/front-dashboard-v1.1/dist/assets/js/vendor.min.js"></script>*@
+<script src="~/front-dashboard-v1.1/dist/assets/vendor/jquery/dist/jquery.min.js"></script>
+<script src="~/front-dashboard-v1.1/dist/assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
+<script src="~/front-dashboard-v1.1/dist/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/front-dashboard-v1.1/dist/assets/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/front-dashboard-v1.1/dist/assets/js/theme.min.js"></script>
+
+    <!-- JS Front -->
+<script src="~/front-dashboard-v1.1/dist/assets/js/theme.min.js"></script>
+<script src="~/front-dashboard-v1.1/dist/assets/vendor/hs-toggle-password/dist/js/hs-toggle-password.js"></script>
+<script src="~/front-dashboard-v1.1/src/assets/js/hs.validation.min.js"></script>
+
+    <!-- JS Plugins Init. -->
+    <script>
+        $(document).on('ready', function () {
+            // INITIALIZATION OF SHOW PASSWORD
+            // =======================================================
+            $('.js-toggle-password').each(function () {
+                new HSTogglePassword(this).init();
+            });
+
+
+            // INITIALIZATION OF FORM VALIDATION
+            // =======================================================
+            $('.js-validate').each(function () {
+                $.HSCore.components.HSValidation.init($(this));
+            });
+
+
+            // INITIALIZATION OF SELECT2
+            // =======================================================
+            //$('.js-select2-custom').each(function () {
+            //    var select2 = $.HSCore.components.HSSelect2.init($(this));
+            //});
+        });
+    </script>
+
+@await RenderSectionAsync("scripts", false)
+
+
+<!-- IE Support -->
+    <script>
+    @{ var url = $"{Context.Request.PathBase}/front-dashboard-v1.1/dist/assets/vendor/babel-polyfill/polyfill.min.js"; }
+    if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) document.write('<script src="@url"><\/script>');    </script>
+</body>
+</html>
+

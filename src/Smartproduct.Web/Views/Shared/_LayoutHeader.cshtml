@@ -1,0 +1,43 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@{ 
+
+    var headings = ViewData.ContainsKey("HeadingDetails") ? ViewData["HeadingDetails"].ToString() : string.Empty;
+    var headingSubTittle = ViewData.ContainsKey("HeadingSubTittle") ? ViewData["HeadingSubTittle"].ToString() : string.Empty;
+    var headingSubDetails = ViewData.ContainsKey("HeadingSubDetails") ? ViewData["HeadingSubDetails"].ToString() : string.Empty;
+
+    var hrefLink = ViewData.ContainsKey("hrefLink") ? ViewData["hrefLink"].ToString() : "#";
+    var action = ViewData.ContainsKey("action") ? ViewData["action"].ToString() : string.Empty;
+    var btnIcon = ViewData.ContainsKey("btnIcon") ? ViewData["btnIcon"].ToString() : string.Empty;
+}
+
+
+<div class="content container-fluid">
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="row align-items-end">
+            <div class="col-sm mb-2 mb-sm-0">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb breadcrumb-no-gutter">
+                        <li class="breadcrumb-item"><a class="breadcrumb-link" href="javascript:;">@headings</a></li>
+                        <li class="breadcrumb-item"><a class="breadcrumb-link" href="javascript:;">@headingSubTittle</a></li>
+
+                    </ol>
+                </nav>
+
+                <h1 class="page-header-title">@headingSubDetails</h1>
+            </div>
+
+            <div class="col-sm-auto">
+                @if (!string.IsNullOrEmpty(hrefLink))
+                {
+                    <a class="btn btn-sm btn-primary mr-2" href=@hrefLink>
+                        <i class="@btnIcon mr-1"></i> @action
+                    </a>
+                }
+            </div>
+        </div>
+        <!-- End Row -->
+    </div>
+    <!-- End Page Header -->
+</div>

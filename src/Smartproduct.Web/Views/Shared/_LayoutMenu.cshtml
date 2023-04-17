@@ -1,0 +1,63 @@
+﻿<div class="navbar-nav-wrap-content-left collapse navbar-collapse" id="navbarNavMenu">
+    <div class="navbar-body">
+        <ul class="navbar-nav flex-grow-1">
+            <li class="hs-has-sub-menu">
+                <a id="pagesDropdown" class="hs-mega-menu-invoker navbar-nav-link nav-link nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="navLinkPagesDropdown-Users">
+                    <i class="fas fa-house nav-icon"></i> Categories
+                </a>
+
+                <!-- Dropdown -->
+                <ul id="navLinkPagesDropdown-Users" class="hs-sub-menu dropdown-menu dropdown-menu-lg hs-sub-menu-desktop-lg animated" aria-labelledby="pagesDropdown-Users" style="min-width: 16rem; animation-duration: 300ms;">
+                    <li>
+                        <a class="dropdown-item" href="@Url.Action("Newcategory", "Category")">
+                            <span class="tio-circle-outlined nav-indicator-icon"></span> New
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="@Url.Action("Currentcategories", "Category")">
+                            <span class="tio-circle-outlined nav-indicator-icon"></span> Current Categories
+                        </a>
+                    </li>
+                </ul>
+                <!-- End Dropdown -->
+            </li>
+            <li class="hs-has-sub-menu">
+                <a id="pagesDropdown" class="hs-mega-menu-invoker navbar-nav-link nav-link nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="navLinkPagesDropdown-Users">
+                    <i class="fas fa-list  nav-icon"></i> Products
+                </a>
+
+                <!-- Dropdown -->
+                <ul id="navLinkPagesDropdown-Users" class="hs-sub-menu dropdown-menu dropdown-menu-lg hs-sub-menu-desktop-lg animated" aria-labelledby="pagesDropdown-Users" style="min-width: 16rem; animation-duration: 300ms;">
+                    <li>
+                        <a class="dropdown-item" href="@Url.Action("Newproduct", "Product")">
+                            <span class="tio-circle-outlined nav-indicator-icon"></span> New
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="@Url.Action("Currentproducts", "Product")">
+                            <span class="tio-circle-outlined nav-indicator-icon"></span> Current Products
+                        </a>
+                    </li>
+                </ul>
+                <!-- End Dropdown -->
+            </li>
+
+            <li class="hs-has-sub-menu">
+                <a id="pagesDropdown" class="hs-mega-menu-invoker navbar-nav-link nav-link nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="navLinkPagesDropdown-Users">
+                    <i class="fas fa-user nav-icon"></i> Downloads
+                </a>
+
+                <!-- Dropdown -->
+                <ul id="navLinkPagesDropdown-Users" class="hs-sub-menu dropdown-menu dropdown-menu-lg hs-sub-menu-desktop-lg animated" aria-labelledby="pagesDropdown-Users" style="min-width: 16rem; animation-duration: 300ms;">
+                    <li>
+                        <a class="dropdown-item" href="@Url.Action("Files", "File")">
+                            <span class="tio-circle-outlined nav-indicator-icon"></span> Files
+                        </a>
+                    </li>
+                </ul>
+                <!-- End Dropdown -->
+            </li>
+
+        </ul>
+    </div>
+</div>
