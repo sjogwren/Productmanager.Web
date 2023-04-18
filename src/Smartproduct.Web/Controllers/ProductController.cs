@@ -89,16 +89,19 @@ namespace Smartproduct.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> Editproduct(Product product, IFormFile file)
         {
+            var currentProduct = await _productRouter.GetProductById(product.ProductId);
             if (file != null)
             {
                 product.Image = "Yes";
                 product.CreatedBy = User.Identity.Name;
+                product.ProductCode = currentProduct.ProductCode;
                 var p = await _productRouter.Put(product);
                 await _fileRouter.Insert(FileHelper.AssignFile(file, User.Identity.Name, product.ProductId));
             }
             else
             {
                 product.Image = "No";
+                product.ProductCode = currentProduct.ProductCode;
                 product.CreatedBy = User.Identity.Name;
                 await _productRouter.Put(product);
             }
