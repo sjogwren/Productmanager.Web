@@ -37,6 +37,24 @@ namespace Smartproduct.Web.Models
             return file;
         }
 
+
+        public static Model.File.File UploadExcel(IFormFile item, string username, int? productId)
+        {
+            var file = new Model.File.File()
+            {
+                ProductId = productId,
+                FileName = item.FileName,
+                FileContentType = item.ContentType,
+                FileLength = Convert.ToInt32(item.Length),
+                CreatedBy = username,
+                CreatedOn = DateTime.Now,
+            };
+            var dataStream = new MemoryStream();
+            item.CopyToAsync(dataStream);
+            file.FileData = dataStream.ToArray();
+            return file;
+        }
+
         public static List<Model.Product.Product> GetDataFromExcel(IFormFile File, List<Product> products, string username)
         {
             using (var workBook = new XLWorkbook(File.OpenReadStream()))

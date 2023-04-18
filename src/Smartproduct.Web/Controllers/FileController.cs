@@ -8,6 +8,7 @@ using Smartproduct.Web.Models;
 using Smartproduct.Web.Utils;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -44,7 +45,7 @@ namespace Smartproduct.Web.Controllers
         public async Task<IActionResult> Files(IFormFile File)
         {
             var products = await _productRouter.GetAllProducts();
-            await _fileRouter.Insert(FileHelper.AssignFile(File, User.Identity.Name, null));
+            await _fileRouter.Insert(FileHelper.UploadExcel(File, User.Identity.Name, null));
             await _productRouter.Bulkinsert(FileHelper.GetDataFromExcel(File,products,User.Identity.Name));
             return RedirectToAction("Currentproducts", "Product");
         }
@@ -53,7 +54,8 @@ namespace Smartproduct.Web.Controllers
         public async Task<IActionResult> Download(int FileId)
         {
             var documents = await _fileRouter.GetFileById(FileId);
-            return File(documents.FileData, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", documents.FileContentType);
+            MemoryStream ms = new MemoryStream(documents.FileData);
+            return File(documents.FileData, documents.FileContentType,documents.FileName);
         }
 
     }
