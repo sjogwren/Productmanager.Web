@@ -118,7 +118,8 @@ namespace Smartproduct.Web.Controllers
         {
             var vm = new ProductFileViewModel();
             vm.Product = await _productRouter.GetProductById(ProductId);
-            vm.File = await _fileRouter.GetFileById(ProductId);
+            var files = await _fileRouter.GetAllFiles();
+            vm.File = files.Where(x => x.ProductId == ProductId).OrderByDescending(x => x.FileId).Take(1).FirstOrDefault();
             if (vm.File != null)
             {
                 vm.File.FileDataStr = Encoding.ASCII.GetString(vm.File.FileData, 0, vm.File.FileData.Length);

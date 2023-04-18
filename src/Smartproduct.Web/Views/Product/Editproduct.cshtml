@@ -69,14 +69,16 @@
                                 <label for="txtCategoryCode" class="input-label">Price(R)</label>
                                 <div class="js-form-message mb-3">
                                     <input id="txtPrices" type="text" class="form-control" required
-                                           data-msg="Please enter a description." placeholder="Price" aria-label="Current Value" asp-for="Description">
+                                           data-msg="Please enter a description." placeholder="Price" aria-label="Current Value" asp-for="Price">
                                 </div>
                             </div>
-                            <!-- End Form Group -->
-                            <!-- Form Group -->
+                        </div>
+                        <!-- End Form Group -->
+                        <!-- Form Group -->
+                        <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="txtCategoryCode" class="input-label">Category</label>
-                                <div class="col-sm-4 js-form-message mb-3">
+                                <div class="col-sm-12 js-form-message mb-3">
                                     @Html.DropDownListFor(m => m.CategoryName, new SelectList(Model.CategoryList, "Name", "Name"), new { @class = "js-select2-custom form-control" })
                                 </div>
                             </div>
