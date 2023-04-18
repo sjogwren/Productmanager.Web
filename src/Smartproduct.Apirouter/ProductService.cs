@@ -68,7 +68,7 @@ namespace Smartproduct.Service
         /// <returns>Returns a boolean</returns>
         public async Task<bool> Put(Product product)
         {
-            return await Connection.PutAsync(new Uri(UriHelper.Api.FruitSaApi, $"{UriHelper.Controller.Product}Put/Update"), product);
+            return await Connection.PutAsync(new Uri(UriHelper.Api.FruitSaApi, $"{UriHelper.Controller.Product}Update/Update"), product);
         }
 
         /// <summary>
